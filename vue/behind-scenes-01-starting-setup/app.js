@@ -15,12 +15,41 @@ const app = Vue.createApp({
       // console.dir(this.$refs.userText)
     },
   },
-  // beforeCreate() {
-  //   console.log("beforeCreate()")
-  // }
+
+  // list of lifecycle hooks
+  beforeCreate() {
+    console.log("beforeCreate()")
+    // can send http request in here
+  },
+  created() {
+    console.log('created()')
+  },
+  beforeMount() {
+    console.log('beforeMount()')
+  },
+  mounted() {
+    console.log('mounted()')
+  },
+  beforeUpdate() {
+    console.log('beforeUpdate()')
+  },
+  updated() {
+    console.log('updated()')
+  },
+  beforeUnmount() {
+    console.log('beforeUnmount()')
+  },
+  unmounted() {
+    console.log('unmounted()')
+  }
 });
 
 app.mount('#app');
+
+setTimeout(() => {
+  app.unmount()
+}, 5000);
+
 
 const app2 = Vue.createApp({
   template: `
